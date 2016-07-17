@@ -1,0 +1,176 @@
+$size--header-height: 40px;
+
+.main-header {
+  display: flex;
+  min-height: $size--header-height;
+
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+
+  &.bordered {
+    border-bottom: 1px solid $color-divider;
+  }
+
+  .left-header {
+    display: flex;
+    min-width: $size--sidebar-width + 1px;
+  }
+
+  .right-header {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0;
+  }
+
+  .windows-buttons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    margin-right: 7px;
+    -webkit-app-region: no-drag;
+
+    .windows-button {
+      height: 25px;
+      margin-left: 1px;
+      -webkit-transition: -webkit-filter 0.3s;
+
+      &:hover {
+        -webkit-transition: -webkit-filter 0s;
+      }
+
+      &.button-minimize, &.button-fullscreen, &.button-fullscreenclose  {
+        min-width: 34px;
+        background-color: white;
+
+        .icon {
+          background-repeat: no-repeat;
+          -webkit-filter: brightness(0.3);
+          height: 25px;
+        }
+
+        &:hover {
+          -webkit-filter: brightness(0.9);
+        }
+
+        &:active {
+          -webkit-filter: brightness(0.8);
+        }
+      }
+
+      &.button-minimize {
+        .icon {
+          background-position: 50% 18px;
+          background-image: url('../images/windows-minimize.png');
+          background-size: 14px, 2px;
+        }
+      }
+
+      &.button-fullscreen {
+        .icon {
+          background-position: center;
+          background-image: url('../images/windows-fullscreen.png');
+          background-size: 14px, 2px;
+        }
+      }
+
+      &.button-fullscreenclose {
+        .icon {
+          background-position: center;
+          background-image: url('../images/windows-fullscreenclose.png');
+          background-size: 14px, 2px;
+        }
+      }
+
+      &.button-close {
+        min-width: 58px;
+        background: #C75050;
+        background-image: url('../images/windows-close.png', 12px, 9px);
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: inset 0 0 0 -1px rgba(255, 255, 255, 0.4);
+        &:hover {
+          -webkit-filter: saturate(120%);
+        }
+
+        &:active {
+          -webkit-filter: brightness(0.8);
+        }
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    margin: 0 1.5rem;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      .button-minimize.enabled {
+        background-image: url('../images/minimize.png');
+        background-size: 10px, 10px;
+      }
+      .button-close.enabled {
+        background-image: url('../images/close.png');
+        background-size: 10px, 10px;
+      }
+      .button-fullscreen.enabled {
+        background-image: url('../images/fullscreen.png');
+        background-size: 10px, 10px;
+      }
+      .button-fullscreenclose.enabled {
+        background-image: url('../images/fullscreenclose.png');
+        background-size: 10px, 10px;
+      }
+    }
+
+    .button {
+      flex: 0 auto;
+      box-sizing: border-box;
+      display: inline-block;
+      background: white;
+      margin-right: 8px;
+      height: 12px;
+      width: 12px;
+      border: 1px solid $traffic-light-gray-border;
+      border-radius: 6px;
+      box-shadow: 0px 1px 1px 0px rgba(234,234,234,0.50);
+      -webkit-app-region: no-drag;
+
+      &.enabled:hover {
+        box-shadow: 0px 1px 1px 0px rgba(195,198,201,0.50);
+      }
+
+      &.enabled:hover:active {
+        cursor: default;
+        -webkit-filter: brightness(92%);
+      }
+
+      &.button-close {
+        background-color: $traffic-light-red;
+        border-color: $traffic-light-red-border;
+      }
+
+      &.button-minimize {
+        background-color: $traffic-light-yellow;
+        border-color: $traffic-light-yellow-border;
+      }
+
+      &.button-fullscreen {
+        background-color: $traffic-light-green;
+        border-color: $traffic-light-green-border;
+      }
+
+      &.button-fullscreenclose {
+        background-color: $traffic-light-green;
+        border-color: $traffic-light-green-border;
+      }
+
+      &.disabled {
+        background-color: $traffic-light-gray;
+        border-color: $traffic-light-gray-border;
+      }
+    }
+  }
+}

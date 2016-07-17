@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $font-regular;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.mount, .app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
