@@ -1,23 +1,24 @@
 import React from 'react';
 import { Router, Route } from 'react-router';
-import { Header, Containers, ContainerStats } from './components';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './reducers';
+import App from './app';
 
 
-class App extends React.Component {
+let store = createStore(reducers);
+
+class Root extends React.Component {
   render() {
     return (
-      <div className="app">
-        <Header />
-        <main className="main">
-          <Containers />
-          <ContainerStats />
-        </main>
-      </div>
+      <Provider store={ store }>
+        <App />
+      </Provider>
     );
   }
 };
 
 export const routes = (
-  <Route name="app" path="/" component={App}>
+  <Route name="app" path="/" component={ Root }>
   </Route>
 );

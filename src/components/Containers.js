@@ -1,33 +1,15 @@
 import React from 'react';
-import { docker } from '../utils/Docker';
 import { Container } from './Container';
+import { connect } from 'react-redux';
 
 
-export class Containers extends React.Component {
+class Containers extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      containers: []
-    };
-  }
-
-  componentDidMount() {
-    docker.fetchAllContainers((err, containers) => {
-      const parsedContainers = containers.map((container) => {
-        return {
-          id: container.Id,
-          name: container.Names[0].replace('/',''),
-          image: container.Image,
-          state: container.State
-        }
-      });
-
-      this.setState({containers: parsedContainers});
-    })
   }
 
   render() {
-    let containers = this.state.containers.map((container) => {
+    let containers = this.props.containers.map((container) => {
       return (
         <Container key={container.id} data={container} />
       );
@@ -47,3 +29,11 @@ export class Containers extends React.Component {
     );
   }
 }
+
+function select(state) {
+  return {
+    containers: state.containers
+  };
+}
+
+export const ContainerList = connect(select, null)(Containers);
