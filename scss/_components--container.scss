@@ -1,6 +1,7 @@
 .container {
   display: flex;
   height: 45px;
+  padding: 0 1.6rem;
   align-items: center;
 
   &-state {
@@ -20,9 +21,10 @@
   }
 
   &-info {
-    padding-left: 0.5rem;
+    padding-left: $space;
     display: flex;
     flex-direction: column;
+    color: $gray-darkest;
 
     .name {
       text-overflow: ellipsis;
@@ -31,7 +33,6 @@
       overflow: hidden;
       font-size: 13px;
       font-weight: 400;
-      color: $gray-darkest;
     }
 
     .image {
@@ -43,6 +44,21 @@
       max-width: 140px;
       white-space: nowrap;
       overflow: hidden;
+    }
+  }
+
+  &--selected {
+    background-color: $brand-primary;
+
+    .container-state {
+      &-running {
+        background-image: url('../images/running-white.png');
+      }
+    }
+    .container-info {
+      .name, .image {
+        color: white;
+      }
     }
   }
 }
