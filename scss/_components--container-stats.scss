@@ -10,9 +10,28 @@
 
     .stat {
       display: flex;
+      flex-direction: column;
       margin: 0 $space $space 0;
-      min-width: 500px;
       min-height: 300px;
+      min-width: 500px;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        background-color: #100F2A;
+        padding: 0 $space;
+
+        h3 {
+          margin: 0;
+          color: white;
+        }
+      }
+
+      &-body {
+        padding: $space;
+        background-color: white;
+      }
     }
   }
 }

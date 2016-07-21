@@ -14,7 +14,7 @@ export function stats(state = [], action) {
 
     newState.push(tick);
 
-    if (newState.length >= 30) {
+    if (newState.length >= 15) {
       newState.shift();
     }
 
