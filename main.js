@@ -14,7 +14,8 @@ function createMainWindow() {
     height: 960,
     minWidth: 1290,
     minHeight: 960,
-    frame: false
+    frame: false,
+    icon: './images/logo.png'
   });
 
   win.loadURL(`file://${__dirname}/index.html`);

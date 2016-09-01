@@ -19,7 +19,7 @@ class ContainerStatsComponent extends React.Component {
   }
 
   prepareData() {
-    const toPercent = 10000000000;
+    console.log(this.props.stats);
     let labels = this.props.stats.map((tick) => {
       return '';
     });
@@ -44,7 +44,12 @@ class ContainerStatsComponent extends React.Component {
     };
 
     let cpuStatsData = this.props.stats.map((tick) => {
-      return (tick.cpu_stats.cpu_usage.total_usage / toPercent).toFixed(3);
+      const cpuDelta = tick.cpu_stats.cpu_usage.total_usage - tick.precpu_stats.cpu_usage.total_usage;
+      const systemDelta = tick.cpu_stats.system_cpu_usage - tick.precpu_stats.system_cpu_usage;
+      const delta = cpuDelta / systemDelta || 0;
+      const cores = tick.cpu_stats.cpu_usage.percpu_usage.length;
+
+      return (delta * cores * 100).toFixed(2);
     });
 
     let memoryStatsData = this.props.stats.map((tick) => {

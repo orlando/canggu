@@ -1,11 +1,12 @@
 {
   "name": "canggu",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Visual Docker container stats",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "compile": "sassc scss/main.scss > css/main.css"
+    "compile": "sassc scss/main.scss > css/main.css",
+    "package": "npm run compile; electron-packager . 'Canggu (Beta)' --platform=darwin --arch=x64 --icon=./images/logo.icns"
   },
   "repository": {
     "type": "git",

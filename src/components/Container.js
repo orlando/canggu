@@ -18,12 +18,14 @@ class ContainerComponent extends React.Component {
 
     this.onClick = this.onClick.bind(this);
     this.onStatsTick = this.onStatsTick.bind(this);
-
   }
 
   onClick() {
     const { data }  = this.props;
-    this.props.selectContainer(data);
+
+    if (data.state === 'running') {
+      this.props.selectContainer(data);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
