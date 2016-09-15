@@ -19,7 +19,6 @@ class ContainerStatsComponent extends React.Component {
   }
 
   prepareData() {
-    console.log(this.props.stats);
     let labels = this.props.stats.map((tick) => {
       return '';
     });

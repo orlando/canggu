@@ -21,8 +21,8 @@ npm run package
 
 ## To-do
 
-* [X] Add Icon
-* [ ] Fix render issue with container list menu http://recordit.co/6a1h1nFAsl
+* [x] Add Icon
+* [x] Fix render issue with container list menu http://recordit.co/6a1h1nFAsl
 * [ ] Show first in the list running containers
 * [ ] Move `prepareData` logic to reducer
 * [ ] Add loading screen
