@@ -3,7 +3,7 @@
 Docker containers stats visualizator, build using React + Electron. The
 UI is heavily inspired in [Kitematic](https://github.com/docker/kitematic)
 
-I build this to have an easy way to see memory and cpu usage for containers, to detect and fix memory leaks.
+I build this to have an easy way to see memory and cpu usage for containers, to detect and fix memory leaks in Golang programs.
 
 ![gif](http://recordit.co/SXwGC9ToCU.gif)
 
