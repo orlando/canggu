@@ -1,1 +1,3 @@
-Canggu *
+node_modules/
+.sass-cache/*
+*.log
