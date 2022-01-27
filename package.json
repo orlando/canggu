@@ -31,12 +31,13 @@
     "chart.js": "^2.2.0-rc.1",
     "classnames": "^2.2.5",
     "dockerode": "^2.2.10",
-    "react-chartjs": "git://github.com/reactjs/react-chartjs.git#chartjs-v2",
     "react": "^15.2.1",
+    "react-chartjs": "git://github.com/reactjs/react-chartjs.git#chartjs-v2",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-streams": "1.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
